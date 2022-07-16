@@ -1,14 +1,15 @@
   {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Giv/HNY Babe",
   "description": "Stay up to date",
   "version": "1.0",
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js",
+    "type": "module"
   },
 
-  "browser_action": {
+  "action": {
 	"default_popup": "popup.html",
 	"default_title": "Giv/HNY babe",
     "default_icon": {
