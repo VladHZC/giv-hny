@@ -1,12 +1,10 @@
 function updatePrice() {
-    var request = new XMLHttpRequest();
-    request.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=giveth&vs_currencies=usd");
-    request.send();
-    request.onload = () => {
-        if (request.status == 200) {
-            var response = JSON.parse(request.responseText);
-        }
-    }
+    var request = new Request('https://api.coingecko.com/api/v3/simple/price?ids=giveth&vs_currencies=usd', {
+        method: 'GET'
+    });
+
+    fetch(request)
+    .then(response => response.json());
 
     request.onload = () => {
         if (request.status == 200) {
